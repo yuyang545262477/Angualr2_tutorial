@@ -9,7 +9,7 @@ import {AuthorsService} from "./authors.services";
           <ul>
           <li *ngFor="#author of authors">
           {{author}}
-</li> 
+           </li> 
           </ul>
           `,
     providers: [AuthorsService]
