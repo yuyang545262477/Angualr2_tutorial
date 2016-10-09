@@ -1,4 +1,4 @@
-System.register(["angular2/core", "./favorite.component", "./glyphicon-heart/glyphicon-heart.component"], function (exports_1, context_1) {
+System.register(["angular2/core", "./glyphicon-heart/glyphicon-heart.component"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,15 +10,12 @@ System.register(["angular2/core", "./favorite.component", "./glyphicon-heart/gly
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, favorite_component_1, glyphicon_heart_component_1;
+    var core_1, glyphicon_heart_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (favorite_component_1_1) {
-                favorite_component_1 = favorite_component_1_1;
             },
             function (glyphicon_heart_component_1_1) {
                 glyphicon_heart_component_1 = glyphicon_heart_component_1_1;
@@ -26,25 +23,16 @@ System.register(["angular2/core", "./favorite.component", "./glyphicon-heart/gly
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    this.post = {
-                        title: 'title',
-                        number: 10,
-                        isFavorite: true
+                    this.test = {
+                        totalLike: 10,
+                        isLike: false
                     };
                 }
-
-                AppComponent.prototype.Ding = function () {
-                    this.post.number = this.post.number === 11 ? 10 : 11;
-                };
-                AppComponent.prototype.getChange = function ($event) {
-                    console.log($event);
-                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<heart (DingDing)="Ding()"></heart>' +
-                        '{{post.number}}',
-                        directives: [favorite_component_1.FavoriteComponent, glyphicon_heart_component_1.HeartComponent]
+                        template: '<like [totalLike]="test.totalLike" [isLike]="test.isLike"></like>',
+                        directives: [glyphicon_heart_component_1.HeartComponents]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

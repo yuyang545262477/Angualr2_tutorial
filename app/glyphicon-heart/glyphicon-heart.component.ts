@@ -1,27 +1,25 @@
-import {Component, Output, EventEmitter} from "angular2/core";
+import {Component, Input} from "angular2/core";
 
 @Component({
-    selector: 'heart',
+    selector: 'like',
     templateUrl: 'app/glyphicon-heart/glyphicon-heart.template.html',
     styles: [`
        .glyphicon{
-       color:#CCC;
-       cursor: pointer;
+            color:#CCC;
+            cursor: pointer;
        }
-       .glyphicon.active{
+       .iLike {
             color:deeppink;
        }
 `]
 })
 
-export class HeartComponent {
+export class HeartComponents {
+    @Input() isLike = false;
+    @Input() totalLike = 10;
 
-    isActive = false;
-    @Output() DingDing = new EventEmitter();
-
-    Clicked() {
-        this.isActive = !this.isActive;
-        this.DingDing.emit();
+    Ilike() {
+        this.isLike = !this.isLike;
+        this.totalLike += this.isLike ? 1 : -1;
     }
-
 }
