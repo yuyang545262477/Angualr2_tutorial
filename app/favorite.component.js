@@ -21,16 +21,26 @@ System.register(["angular2/core"], function (exports_1, context_1) {
             FavoriteComponent = (function () {
                 function FavoriteComponent() {
                     this.isFavorite = false;
+                    this.change = new core_1.EventEmitter();
                 }
-
                 FavoriteComponent.prototype.onClick = function () {
                     this.isFavorite = !this.isFavorite;
+                    this.change.emit({newValue: this.isFavorite});
                 };
+                __decorate([
+                    core_1.Input(),
+                    __metadata('design:type', Object)
+                ], FavoriteComponent.prototype, "isFavorite", void 0);
+                __decorate([
+                    core_1.Output(),
+                    __metadata('design:type', Object)
+                ], FavoriteComponent.prototype, "change", void 0);
                 FavoriteComponent = __decorate([
                     core_1.Component({
                         selector: 'favorite',
-                        template: "<i class=\"glyphicon\" \n                [class.glyphicon-star-empty]=\"!isFavorite\"\n                [class.glyphicon-star]=\"isFavorite\"\n                (click)=\"onClick()\"\n                >\n               </i>\n             "
-                    }),
+                        templateUrl: 'app/favorite.template.html',
+                        styleUrls: ['app/star.css']
+                    }), 
                     __metadata('design:paramtypes', [])
                 ], FavoriteComponent);
                 return FavoriteComponent;

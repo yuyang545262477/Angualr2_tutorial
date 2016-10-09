@@ -1,4 +1,4 @@
-System.register(["angular2/core", "./courses.component", "./authors.component", "./favorite.component"], function(exports_1, context_1) {
+System.register(["angular2/core", "./favorite.component"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,18 +10,12 @@ System.register(["angular2/core", "./courses.component", "./authors.component", 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, courses_component_1, authors_component_1, favorite_component_1;
+    var core_1, favorite_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (courses_component_1_1) {
-                courses_component_1 = courses_component_1_1;
-            },
-            function (authors_component_1_1) {
-                authors_component_1 = authors_component_1_1;
             },
             function (favorite_component_1_1) {
                 favorite_component_1 = favorite_component_1_1;
@@ -29,15 +23,21 @@ System.register(["angular2/core", "./courses.component", "./authors.component", 
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.post = {
+                        title: 'title',
+                        isFavorite: true
+                    };
                 }
+
+                AppComponent.prototype.getChange = function ($event) {
+                    console.log($event);
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<h1>My First Angular 2 App</h1>' +
-                            '<courses></courses>' +
-                            '<authors></authors>' +
-                            '<favorite></favorite>',
-                        directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponents, favorite_component_1.FavoriteComponent]
+                        template: '<i class="glyphicon glyphicon-star"></i> ' +
+                        '<favorite [isFavorite]="post.isFavorite" (change)="getChange($event)"></favorite>',
+                        directives: [favorite_component_1.FavoriteComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
