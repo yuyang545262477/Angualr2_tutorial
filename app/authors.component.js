@@ -26,13 +26,12 @@ System.register(["angular2/core", "./authors.services"], function (exports_1, co
                     this.title = 'I\'am the Authors';
                     this.authors = authorsService.getAuthors();
                 }
-
                 AuthorsComponents = __decorate([
                     core_1.Component({
                         selector: 'authors',
                         template: "\n          <h2>authors</h2>\n          {{title}}\n          <ul>\n          <li *ngFor=\"#author of authors\">\n          {{author}}\n           </li> \n          </ul>\n          ",
                         providers: [authors_services_1.AuthorsService]
-                    }),
+                    }), 
                     __metadata('design:paramtypes', [authors_services_1.AuthorsService])
                 ], AuthorsComponents);
                 return AuthorsComponents;

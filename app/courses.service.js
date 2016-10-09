@@ -8,7 +8,6 @@ System.register([], function (exports_1, context_1) {
             CourseService = (function () {
                 function CourseService() {
                 }
-
                 CourseService.prototype.getCourses = function () {
                     return ['CourseA', 'CourseB', 'CourseC'];
                 };

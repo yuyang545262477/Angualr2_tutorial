@@ -8,7 +8,6 @@ System.register([], function (exports_1, context_1) {
             AuthorsService = (function () {
                 function AuthorsService() {
                 }
-
                 AuthorsService.prototype.getAuthors = function () {
                     return ['韩寒', '郭敬明', '矛盾'];
                 };
