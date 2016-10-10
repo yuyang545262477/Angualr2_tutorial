@@ -33,7 +33,6 @@ System.register(["angular2/core", "./glyphicon-heart/glyphicon-heart.component",
                         isLike: false
                     };
                 }
-
                 AppComponent.prototype.getVote = function ($event) {
                     console.log($event);
                 };
