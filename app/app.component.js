@@ -1,4 +1,4 @@
-System.register(["angular2/core", "./glyphicon-heart/glyphicon-heart.component"], function (exports_1, context_1) {
+System.register(["angular2/core", "./glyphicon-heart/glyphicon-heart.component", "./vote-menu/vote-menu.component"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["angular2/core", "./glyphicon-heart/glyphicon-heart.component"]
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, glyphicon_heart_component_1;
+    var core_1, glyphicon_heart_component_1, vote_menu_component_1;
     var AppComponent;
     return {
         setters:[
@@ -19,20 +19,29 @@ System.register(["angular2/core", "./glyphicon-heart/glyphicon-heart.component"]
             },
             function (glyphicon_heart_component_1_1) {
                 glyphicon_heart_component_1 = glyphicon_heart_component_1_1;
+            },
+            function (vote_menu_component_1_1) {
+                vote_menu_component_1 = vote_menu_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.voteCount = 10;
+                    this.myVote = 0;
                     this.test = {
                         totalLike: 10,
                         isLike: false
                     };
                 }
+
+                AppComponent.prototype.getVote = function ($event) {
+                    console.log($event);
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<like [totalLike]="test.totalLike" [isLike]="test.isLike"></like>',
-                        directives: [glyphicon_heart_component_1.HeartComponents]
+                        templateUrl: 'app/app.template.html',
+                        directives: [glyphicon_heart_component_1.HeartComponents, vote_menu_component_1.VoteMenuComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

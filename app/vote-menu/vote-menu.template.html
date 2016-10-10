@@ -1,0 +1,5 @@
+<div class="container">
+    <i class="glyphicon glyphicon-menu-up" [class.click]="myVote=== 1" (click)="clickUp()"></i>
+    <span>{{voteCount+myVote}}</span>
+    <i class="glyphicon glyphicon-menu-down" [class.click]="myVote=== -1" (click)="clickDown()"></i>
+</div>
