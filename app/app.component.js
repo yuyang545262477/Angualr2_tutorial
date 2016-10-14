@@ -1,4 +1,4 @@
-System.register(["angular2/core", "./glyphicon-heart/glyphicon-heart.component", "./vote-menu/vote-menu.component"], function (exports_1, context_1) {
+System.register(["angular2/core", "./glyphicon-heart/glyphicon-heart.component", "./vote-menu/vote-menu.component", "./contact-form/contact-form.component"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["angular2/core", "./glyphicon-heart/glyphicon-heart.component",
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, glyphicon_heart_component_1, vote_menu_component_1;
+    var core_1, glyphicon_heart_component_1, vote_menu_component_1, contact_form_component_1;
     var AppComponent;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(["angular2/core", "./glyphicon-heart/glyphicon-heart.component",
             },
             function (vote_menu_component_1_1) {
                 vote_menu_component_1 = vote_menu_component_1_1;
+            },
+            function (contact_form_component_1_1) {
+                contact_form_component_1 = contact_form_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -40,7 +43,7 @@ System.register(["angular2/core", "./glyphicon-heart/glyphicon-heart.component",
                     core_1.Component({
                         selector: 'my-app',
                         templateUrl: 'app/app.template.html',
-                        directives: [glyphicon_heart_component_1.HeartComponents, vote_menu_component_1.VoteMenuComponent]
+                        directives: [glyphicon_heart_component_1.HeartComponents, vote_menu_component_1.VoteMenuComponent, contact_form_component_1.ContactForm]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

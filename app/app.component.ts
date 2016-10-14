@@ -1,11 +1,12 @@
 import {Component} from "angular2/core";
 import {HeartComponents} from "./glyphicon-heart/glyphicon-heart.component";
 import {VoteMenuComponent} from "./vote-menu/vote-menu.component";
+import {ContactForm} from "./contact-form/contact-form.component";
 
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.template.html',
-    directives: [HeartComponents, VoteMenuComponent]
+    directives: [HeartComponents, VoteMenuComponent, ContactForm]
 })
 export class AppComponent {
     voteCount = 10;
